@@ -8,13 +8,13 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "userler")
+@Table(name = "kullanici")
 @Data
-public class User {
+public class Kullanici {
 
     @Id
     Long id;
-    String userName;
+    String kullaniciName;
     String password;
 
 }

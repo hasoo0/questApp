@@ -15,7 +15,7 @@ public class Comment {
     @Id
     Long id;
     Long PostId;
-    Long userId;
+    Long kullaniciId;
 
 
 }

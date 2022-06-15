@@ -14,7 +14,7 @@ public class Post {
 
     @Id
     Long id;
-    Long userId;
+    Long kullaniciId;
     String title;
 
 }
