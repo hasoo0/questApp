@@ -1,11 +1,12 @@
 package com.hhk.questapp.entitiy;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "post")
@@ -14,7 +15,14 @@ public class Post {
 
     @Id
     Long id;
-    Long kullaniciId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "kullanici_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    Kullanici kullanici;
+
+
     String title;
 
 }
