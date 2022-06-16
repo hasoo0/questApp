@@ -44,7 +44,6 @@ public class KullaniciService {
         } else
             return null;
     }
-
     public void deleteById(Long kullaniciId) {
         kullaniciRepository.deleteById(kullaniciId);
     }
