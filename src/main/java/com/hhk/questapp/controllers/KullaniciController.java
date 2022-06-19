@@ -32,7 +32,7 @@ public class KullaniciController {
         @GetMapping("/{kullaniciId}")
         public Kullanici getOneKullanici(@PathVariable Long kullaniciId){
         // custom exception ekle
-        return kullaniciService.getOneKullanici(kullaniciId);
+        return kullaniciService.getOneKullaniciById(kullaniciId);
         }
 
         @PutMapping("/{kullaniciId}")

@@ -27,7 +27,7 @@ public class KullaniciService {
         return kullaniciRepository.save(newKullanici);
     }
 
-    public Kullanici getOneKullanici(Long kullaniciId) {
+    public Kullanici getOneKullaniciById(Long kullaniciId) {
         return kullaniciRepository.findById(kullaniciId).orElse(null);
     }
 

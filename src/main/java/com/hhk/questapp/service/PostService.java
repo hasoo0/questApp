@@ -37,7 +37,7 @@ public class PostService {
     }
 
     public Post createOnePost(PostCreateResquest newPostRequest) {
-        Kullanici kullanici = kullaniciService.getOneKullanici(newPostRequest.getKullaniciAdi());
+        Kullanici kullanici = kullaniciService.getOneKullaniciById(newPostRequest.getKullaniciAdi());
       if (kullanici == null)
           return null;
       Post toSave = new Post();
