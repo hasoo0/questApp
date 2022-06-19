@@ -17,7 +17,7 @@ public class PostService {
     private PostRepository postRepository;
     private KullaniciService kullaniciService;
 
-    public PostService(PostRepository postRepository, KullaniciService kullaniciService) {
+    public PostService(PostRepository postRepository,KullaniciService kullaniciService) {
         this.postRepository = postRepository;
         this.kullaniciService = kullaniciService;
     }
@@ -25,7 +25,7 @@ public class PostService {
     public List<Post> getAllPosts(Optional<Long> kullaniciId) {
         if (kullaniciId.isPresent())
             return postRepository.findByKullaniciId(kullaniciId.get());
-        return postRepository.findAll();
+       return postRepository.findAll();
     }
 
     public Post getOnePostById(Long postId) {
@@ -38,13 +38,13 @@ public class PostService {
 
     public Post createOnePost(PostCreateResquest newPostRequest) {
         Kullanici kullanici = kullaniciService.getOneKullanici(newPostRequest.getKullaniciAdi());
-        if (kullanici == null)
-            return null;
-        Post toSave = new Post();
-        toSave.setId(newPostRequest.getId());
-        toSave.setText(newPostRequest.getText());
-        toSave.setTitle(newPostRequest.getTitle());
-        toSave.setKullanici(kullanici);
+      if (kullanici == null)
+          return null;
+      Post toSave = new Post();
+      toSave.setId(newPostRequest.getId());
+      toSave.setText(newPostRequest.getText());
+      toSave.setTitle(newPostRequest.getTitle());
+      toSave.setKullanici(kullanici);
         return postRepository.save(toSave);
 
     }
